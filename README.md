@@ -1,6 +1,6 @@
 # react-native-fast-jest
 
-Run testing 3x faster than babel-jest!
+Run testing 3x faster than babel-jest in React Native!
 
 Internally using @swc/jest
 
