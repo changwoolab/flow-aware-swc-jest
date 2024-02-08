@@ -1,0 +1,38 @@
+{
+  "name": "react-native-fast-jest",
+  "version": "1.0.0",
+  "description": "Use @swc/jest in React Native for faster testing!",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changwoolab/react-native-fast-jest.git"
+  },
+  "keywords": [
+    "swc",
+    "jest",
+    "react-native",
+    "test"
+  ],
+  "author": "changwoolab <cwyoo01@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/changwoolab/react-native-fast-jest/issues"
+  },
+  "homepage": "https://github.com/changwoolab/react-native-fast-jest#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "@swc/core": "^1.4.0",
+    "@swc/jest": "^0.2.36",
+    "flow-remove-types": "^2.228.0",
+    "jest": "^29.7.0"
+  }
+}
