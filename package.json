@@ -1,6 +1,6 @@
 {
   "name": "flow-aware-swc-jest",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Use @swc/jest even if you have flow",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,10 @@
     "swc",
     "jest",
     "react-native",
-    "test"
+    "test",
+    "swc-jest",
+    "@swc/jest",
+    "flow"
   ],
   "author": "changwoolab <cwyoo01@naver.com>",
   "license": "MIT",
