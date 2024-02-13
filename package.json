@@ -1,14 +1,14 @@
 {
-  "name": "react-native-fast-jest",
+  "name": "flow-aware-swc-jest",
   "version": "1.0.2",
-  "description": "Use @swc/jest in React Native for faster testing!",
+  "description": "Use @swc/jest even if you have flow",
   "main": "index.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/changwoolab/react-native-fast-jest.git"
+    "url": "git+https://github.com/changwoolab/flow-aware-swc-jest.git"
   },
   "keywords": [
     "swc",
@@ -19,10 +19,10 @@
   "author": "changwoolab <cwyoo01@naver.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/changwoolab/react-native-fast-jest/issues"
+    "url": "https://github.com/changwoolab/flow-aware-swc-jest/issues"
   },
-  "homepage": "https://github.com/changwoolab/react-native-fast-jest#readme",
-  "publishConfig": {
+  "homepage": "https://github.com/changwoolab/flow-aware-swc-jest#readme",
+  "publisxRhConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },

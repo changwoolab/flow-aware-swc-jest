@@ -1,13 +1,11 @@
-# react-native-fast-jest
+# flow-aware-swc-jest
 
-Run testing 3x faster than babel-jest in React Native!
-
-Internally using @swc/jest
+Use `@swc/jest` even if you are using flow.
 
 <table>
   <tr>
     <th>babel-jest (61s)</th>
-    <th>react-native-fast-jest (23s)</th>
+    <th>flow-aware-swc-jest (23s)</th>
   </tr>
   <tr>
 <td>
@@ -23,58 +21,63 @@ Internally using @swc/jest
   </tr>
 </table>
 
-
 ## Installation
+
 ```
-npm i --save-dev react-native-fast-jest
+npm i --save-dev flow-aware-swc-jest
 ```
+
 ## Configuration
 
 1. You need to configure `.swcrc` like below.
+
 ```json
 {
-    "jsc": {
-        "parser": {
-            "syntax": "typescript",
-            "jsx": true,
-            "tsx": true,
-            "dynamicImport": false,
-            "privateMethod": false,
-            "functionBind": false,
-            "exportDefaultFrom": false,
-            "exportNamespaceFrom": false,
-            "decorators": false,
-            "decoratorsBeforeExport": false,
-            "topLevelAwait": false,
-            "importMeta": false,
-            "preserveAllComments": false
-        },
-        "transform": null,
-        "target": "es5",
-        "loose": true,
-        "externalHelpers": false,
-        "keepClassNames": false
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "jsx": true,
+      "tsx": true,
+      "dynamicImport": false,
+      "privateMethod": false,
+      "functionBind": false,
+      "exportDefaultFrom": false,
+      "exportNamespaceFrom": false,
+      "decorators": false,
+      "decoratorsBeforeExport": false,
+      "topLevelAwait": false,
+      "importMeta": false,
+      "preserveAllComments": false
     },
-    "isModule": true
+    "transform": null,
+    "target": "es5",
+    "loose": true,
+    "externalHelpers": false,
+    "keepClassNames": false
+  },
+  "isModule": true
 }
 ```
 
 2. Configure jest config trasform
+
 ```js
 transform: {
-  '^.+\\.(t|j)sx?$': 'react-native-fast-jest',
+  '^.+\\.(t|j)sx?$': 'flow-aware-swc-jest',
 },
 ```
 
-## I have error when jest.spyOn 
+## I have error when jest.spyOn
+
 `TypeError: Cannot redefine property` or `TypeError: Cannot read properties of undefined`
 
 You need to do mock as a esModule
+
 ```js
-jest.mock('./path_to_spy', () => {
-    return {
-        __esModule: true, // <- Important!
-        ...jest.requireActual('./path_to_spy'),
-    };
+jest.mock("./path_to_spy", () => {
+  return {
+    __esModule: true, // <- Important!
+    ...jest.requireActual("./path_to_spy"),
+  };
 });
 ```

@@ -1,22 +1,19 @@
 const flowRemoveTypes = require("flow-remove-types");
-const createTransformer = require("@swc/jest").createTransformer;
+const createSwcTransformer = require("@swc/jest").createTransformer;
+
+const swcTransformer = createSwcTransformer();
 
 module.exports = {
   process(src, filename, jestOptions) {
     const flowRemoved = flowRemoveTypes(src, jestOptions).toString();
-    const result = createTransformer().process(
-      flowRemoved,
-      filename,
-      jestOptions
-    );
-    return result;
+    return swcTransformer.process(flowRemoved, filename, jestOptions);
   },
   processAsync(src, filename, jestOptions) {
     const flowRemoved = flowRemoveTypes(src).toString();
-    return createTransformer().processAsync(flowRemoved, filename, jestOptions);
+    return swcTransformer.processAsync(flowRemoved, filename, jestOptions);
   },
   getCacheKey(src, filename, jestOptions) {
     const flowRemoved = flowRemoveTypes(src).toString();
-    return createTransformer().getCacheKey(flowRemoved, filename, jestOptions);
+    return swcTransformer.getCacheKey(flowRemoved, filename, jestOptions);
   },
 };
