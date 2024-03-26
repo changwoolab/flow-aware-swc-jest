@@ -29,15 +29,7 @@ npm i --save-dev flow-aware-swc-jest
 
 ## Configuration
 
-Configure jest config transform
-
-```js
-transform: {
-  '^.+\\.(t|j)sx?$': 'flow-aware-swc-jest',
-},
-```
-
-[Optional] You may configure your own `.swcrc` like below.
+1. You need to configure `.swcrc` like below.
 
 ```json
 {
@@ -65,6 +57,14 @@ transform: {
   },
   "isModule": true
 }
+```
+
+2. Configure jest config trasform
+
+```js
+transform: {
+  '^.+\\.(t|j)sx?$': 'flow-aware-swc-jest',
+},
 ```
 
 ## I have error when jest.spyOn
